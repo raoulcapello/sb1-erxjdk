@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Add syntax highlighting */
+.language-markup {
+  color: #383a42;
+}
+.language-markup .token.tag {
+  color: #a626a4;
+}
+.language-markup .token.attr-name {
+  color: #986801;
+}
+.language-markup .token.attr-value {
+  color: #50a14f;
+}
+.language-markup .token.string {
+  color: #50a14f;
+}
+.language-markup .token.comment {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+/* CSS effect */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.css-effect {
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-fade-in-up:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.animate-fade-in-up:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Oozing glow effect for the button */
+@keyframes oozingGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px #4fd1c5, 0 0 10px #4fd1c5, 0 0 15px #4fd1c5, 0 0 20px #4fd1c5;
+  }
+  50% {
+    box-shadow: 0 0 10px #667eea, 0 0 20px #667eea, 0 0 30px #667eea, 0 0 40px #667eea;
+  }
+}
+
+.restart-button {
+  animation: oozingGlow 3s ease-in-out infinite;
+}
+
+/* Hover state for black background */
+.bg-black .restart-button {
+  animation: oozingGlowYellow 3s ease-in-out infinite;
+}
+
+@keyframes oozingGlowYellow {
+  0%, 100% {
+    box-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700, 0 0 20px #ffd700;
+  }
+  50% {
+    box-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00, 0 0 40px #ffff00;
+  }
+}
+
+/* Ensure the button is always visible */
+.restart-button {
+  z-index: 10;
+}
